@@ -1,24 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
 
 const ResetPassword = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simulate password reset flow
-    console.log("Reset email:", email);
-    setMessage(
-      "If this email is registered, you will receive reset instructions."
-    );
+  const onSubmit = (data) => {
+    console.log("Reset email:", data.email);
+    alert("If this email is registered, you will receive reset instructions.");
   };
 
   return (
     <div className="h-[calc(100vh-80px)] px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-center text-blue-800">
           Reset Password
         </h1>
@@ -29,9 +28,17 @@ const ResetPassword = () => {
             type="email"
             placeholder="Enter your email"
             className="ring-2 ring-gray-300 rounded-md p-3 w-80"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Enter a valid email",
+              },
+            })}
           />
+          {errors.email && (
+            <span className="text-red-500 text-sm">{errors.email.message}</span>
+          )}
         </div>
 
         <button type="submit" className="bg-blue-800 text-white p-2 rounded-md">
@@ -44,10 +51,6 @@ const ResetPassword = () => {
             Login
           </Link>
         </div>
-
-        {message && (
-          <p className="text-green-600 text-sm text-center">{message}</p>
-        )}
       </form>
     </div>
   );

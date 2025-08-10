@@ -61,22 +61,21 @@ const Slider = () => {
               <h1 className="text-5xl lg:text-6xl 2xl:text-8xl font-semibold">
                 {slide.title}
               </h1>
-              <Link href={slide.url}>
+              <Link href="/products">
                 <button className="rounded-md bg-black text-white py-3 px-4 ">
                   SHOP NOW
                 </button>
               </Link>
             </div>
             {/* IMAGE CONTAINER */}
-            <div className="h-1/2 xl:w-1/2 xl:h-full relative">
+            <div className="relative h-[300px] xl:h-full xl:w-1/2">
               <Image
                 src={slide.img}
-                alt=""
+                alt="Slide image"
                 fill
-                sizes="100%"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority
-                loading="eager"
               />
             </div>
           </div>
