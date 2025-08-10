@@ -18,9 +18,9 @@ const CartModal = () => {
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return (
     <div className="w-max absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 flex flex-col gap-6 z-20">
-      {cart.length === 0 ? (
+      {/* {cart.length === 0 ? (
         <div className="">Cart is Empty</div>
-      ) : (
+      ) : ( */}
         <>
           <h2 className="text-xl">Shopping Cart</h2>
           {/* LIST */}
@@ -78,12 +78,12 @@ const CartModal = () => {
               Shipping and taxes calculated at checkout.
             </p>
             <div className="flex justify-between text-sm">
-              <button
+              {/* <button
                 onClick={clearCart}
                 className="rounded-md py-3 px-4 ring-1 ring-gray-300 text-white bg-red-600  hover:bg-red-600 "
               >
                 Clear Cart
-              </button>
+              </button> */}
               <Link
                 href="/cart"
                 className="rounded-md py-3 px-4 ring-1 ring-gray-300"
@@ -100,7 +100,7 @@ const CartModal = () => {
             </div>
           </div>
         </>
-      )}
+      {/* )} */}
     </div>
   );
 };

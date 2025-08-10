@@ -12,16 +12,16 @@ const ProductList = () => {
   return (
     <>
       <div className="mt-12 px-6 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-        {products.map((p) => (
+        {products.map((product) => (
           <Link
-            href=""
-            key={p.id}
+          href={`/products/${product.id}`}
+            key={product.id}
             className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
           >
             <div className="relative w-full h-80">
               <Image
-                src={p.image}
-                alt={p.title}
+                src={product.image}
+                alt={product.title}
                 // className="w-full h-48 object-cover"
                 fill
                 sizes="25vw"
@@ -31,8 +31,8 @@ const ProductList = () => {
               />
             </div>
             <div className="flex justify-between">
-              <span className="font-medium line-clamp-1">{p.title}</span>
-              <span className="font-semibold">${p.price}</span>
+              <span className="font-medium line-clamp-1">{product.title}</span>
+              <span className="font-semibold">${product.price}</span>
             </div>
             {/* <h3 className="text-lg font-semibold text-gray-800 mb-2">
               {p.title}
@@ -40,11 +40,11 @@ const ProductList = () => {
             <p className="text-gray-600">{p.price} USD</p> */}
 
             <div className="text-sm text-gray-500 line-clamp-2">
-              {p.description}
+              {product.description}
             </div>
 
             <button
-              onClick={() => addToCart(p)}
+              onClick={() => addToCart(product)}
               className="rounded-2xl ring-1 ring-blue-500 text-blue-500 w-max py-2 px-4 text-xs hover:bg-blue-800 hover:text-white font-semibold "
             >
               Add to Cart

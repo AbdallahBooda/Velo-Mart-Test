@@ -57,14 +57,14 @@ const CategoryList = () => {
             <div className="relative bg-slate-100 w-full h-96">
               <Image
                 src={item.media?.mainMedia?.image?.url || "/cat.png"}
-                alt=""
+                alt="Slide image"
                 fill
-                sizes="20vw"
+                sizes="(max-width: 768px) 100vw, 800px"
                 className="object-cover"
                 priority
-                loading="eager"
               />
             </div>
+
             <h1 className="mt-8 font-light text-xl tracking-wide">
               {item.name}
             </h1>
