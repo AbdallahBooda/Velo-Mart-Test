@@ -3,13 +3,12 @@
 import { CartStore } from "@/store/CartStore";
 import Link from "next/link";
 
-const ProductDetails = ({product}) => {
+const ProductDetails = ({ product }) => {
   const addToCart = CartStore((state) => state.addToCart);
-  
+
   const onSubmit = (e) => {
     e.preventDefault(); // stop page reload
-  
-  }
+  };
   return (
     <div className="bg-white">
       <div className="pt-24">
