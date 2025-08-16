@@ -59,9 +59,11 @@ const CategoryList = () => {
                 src={item.media?.mainMedia?.image?.url || "/cat.png"}
                 alt="Slide image"
                 fill
-                sizes="(max-width: 768px) 100vw, 800px"
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
                 className="object-cover"
-                priority
+                loading="lazy"
               />
             </div>
 
