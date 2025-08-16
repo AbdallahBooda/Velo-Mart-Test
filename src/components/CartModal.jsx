@@ -90,13 +90,14 @@ const CartModal = () => {
               >
                 View Cart
               </Link>
-              <button
+              <Link
+              href="/checkout"
                 className="rounded-md py-3 px-4 bg-black text-white disabled:cursor-not-allowed disabled:opacity-75"
                 // disabled={isLoading}
                 // onClick={handleCheckout}
               >
                 Checkout
-              </button>
+              </Link>
             </div>
           </div>
         </>

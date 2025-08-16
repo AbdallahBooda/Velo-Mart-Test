@@ -5,16 +5,19 @@ import Image from "next/image";
 import { CartStore } from "@/store/CartStore";
 import { ProductStore } from "@/store/ProductStore";
 
-const ProductList = () => {
+const ProductList = ({ limit }) => {
   const products = ProductStore((state) => state.products);
   const addToCart = CartStore((state) => state.addToCart);
+
+  // Apply limit only if provided
+  const displayedProducts = limit ? products.slice(0, limit) : products;
 
   return (
     <>
       <div className="mt-12 px-6 flex gap-x-8 gap-y-16 justify-between flex-wrap">
-        {products.map((product) => (
+        {displayedProducts.map((product) => (
           <Link
-          href={`/products/${product.id}`}
+            href={`/products/${product.id}`}
             key={product.id}
             className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
           >
@@ -22,7 +25,6 @@ const ProductList = () => {
               <Image
                 src={product.image}
                 alt={product.title}
-                // className="w-full h-48 object-cover"
                 fill
                 sizes="25vw"
                 className="absolute object-cover rounded-md"
@@ -34,18 +36,17 @@ const ProductList = () => {
               <span className="font-medium line-clamp-1">{product.title}</span>
               <span className="font-semibold">${product.price}</span>
             </div>
-            {/* <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              {p.title}
-            </h3>
-            <p className="text-gray-600">{p.price} USD</p> */}
 
             <div className="text-sm text-gray-500 line-clamp-2">
               {product.description}
             </div>
 
             <button
-              onClick={() => addToCart(product)}
-              className="rounded-2xl ring-1 ring-blue-500 text-blue-500 w-max py-2 px-4 text-xs hover:bg-blue-800 hover:text-white font-semibold "
+              onClick={(e) => {
+                e.preventDefault(); // Stop link navigation when adding to cart
+                addToCart(product);
+              }}
+              className="rounded-2xl ring-1 ring-blue-500 text-blue-500 w-max py-2 px-4 text-xs hover:bg-blue-800 hover:text-white font-semibold"
             >
               Add to Cart
             </button>
