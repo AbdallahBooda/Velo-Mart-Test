@@ -18,7 +18,6 @@ const Cart = () => {
     }));
   };
 
-
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
@@ -149,9 +148,12 @@ const Cart = () => {
               <p className="text-xl font-semibold text-blue-800">Free</p>
             </div>
             <div className="p-2">
-              <button className="rounded-2xl ring-1 ring-blue-500 text-blue-500 w-max py-2 px-4 text-xs hover:bg-blue-800 hover:text-white font-semibold ">
+              <Link
+                href="/checkout"
+                className="rounded-2xl ring-1 ring-blue-500 text-blue-500 w-max py-2 px-4 text-xs hover:bg-blue-800 hover:text-white font-semibold "
+              >
                 Proceed to Checkout
-              </button>
+              </Link>
             </div>
           </div>
         </div>
