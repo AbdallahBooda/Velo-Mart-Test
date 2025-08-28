@@ -1,32 +1,43 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { ProductStore } from "@/store/ProductStore";
+import { useForm } from "react-hook-form";
 
 const SearchBar = () => {
   const router = useRouter();
+  const products = ProductStore((state) => state.products);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name");
+  // ✅ initialize react-hook-form
+  const { register, handleSubmit } = useForm();
 
-    if (name) {
-      router.push(`/list?name=${name}`);
+  const onSubmit = (data) => {
+    const name = data.name.toLowerCase();
+
+    // find product by name (case-insensitive)
+    const product = products.find((p) =>
+      p.title.toLowerCase().includes(name)
+    );
+
+    if (product) {
+      router.push(`/products/${product.id}`);
+    } else {
+      alert("Product not found");
     }
   };
 
   return (
     <form
       className="flex items-center justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1"
-      onSubmit={handleSearch}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <input
         type="text"
-        name="name"
+        {...register("name")} // ✅ register input with RHF
         placeholder="Search"
         className="flex-1 bg-transparent outline-none"
       />
-      <button className="cursor-pointer">
+      <button type="submit" className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
