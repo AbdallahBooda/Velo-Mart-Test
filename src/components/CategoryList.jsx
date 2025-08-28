@@ -38,7 +38,7 @@ const staticCategories = [
     name: "koj",
     media: {
       mainMedia: {
-        image: { url: "/pro4.avif" },
+        image: { url: "/pro4.webp" },
       },
     },
   },
