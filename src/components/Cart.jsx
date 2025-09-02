@@ -42,7 +42,7 @@ const Cart = () => {
             >
               <Image
                 className="h-20 w-20 object-contain"
-                src={item.image}
+                src={item.thumbnail}
                 alt={item.title}
                 width={80}
                 height={80}

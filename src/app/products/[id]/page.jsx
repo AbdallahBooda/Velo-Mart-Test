@@ -1,9 +1,7 @@
-import Link from "next/link";
-import ProductDetails from '../../../components/ProductDetails';
+import ProductDetails from "../../../components/ProductDetails";
 
 export const metadata = {
   title: {
-    // absolute: "",
     default: "ProductDetails",
     template: "%s",
   },
@@ -11,14 +9,16 @@ export const metadata = {
 };
 
 const page = async ({ params }) => {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`, {
+  const res = await fetch(`https://dummyjson.com/products/${params.id}`, {
     cache: "force-cache",
-  }); //next: {revalidate : 120,}
+    // next: { revalidate: 120 }, // ISR if needed
+  });
   const product = await res.json();
+
   return (
-  <>
-  <ProductDetails product={product} />
-  </> 
+    <>
+      <ProductDetails product={product} />
+    </>
   );
 };
 

@@ -217,12 +217,12 @@ const CheckOut = () => {
                 </dl>
                 <dl className="flex items-center justify-between py-3">
                   <dt className="text-base font-semibold text-blue-800">Tax</dt>
-                  <dd className="text-base font-medium text-gray-900">$199</dd>
+                  <dd className="text-base font-medium text-gray-900">$50</dd>
                 </dl>
                 <dl className="flex items-center justify-between py-3">
                   <dt className="text-base font-bold text-blue-800">Total</dt>
                   <dd className="text-base font-bold text-gray-900">
-                    ${total + 199}
+                    ${total + 50}
                   </dd>
                 </dl>
               </div>
