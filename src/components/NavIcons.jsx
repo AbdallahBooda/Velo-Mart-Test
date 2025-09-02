@@ -14,7 +14,7 @@ const NavIcons = () => {
 
   return (
     <div className="flex items-center gap-4 xl:gap-6 relative">
-      <Link href="/login">
+      <Link href="/login" aria-label="Login">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"

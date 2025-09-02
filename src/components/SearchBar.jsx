@@ -37,7 +37,7 @@ const SearchBar = () => {
         placeholder="Search"
         className="flex-1 bg-transparent outline-none"
       />
-      <button type="submit" className="cursor-pointer">
+      <button type="submit" className="cursor-pointer" aria-label="Search">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"

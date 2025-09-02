@@ -155,7 +155,7 @@ const Payment = () => {
                       Savings
                     </dt>
                     <dd className="text-base font-medium text-green-500">
-                      -$100.00
+                      -$10.00
                     </dd>
                   </dl>
 
@@ -169,7 +169,7 @@ const Payment = () => {
                   <dl className="flex items-center justify-between gap-4">
                     <dt className="text-base font-normal text-gray-500">Tax</dt>
                     <dd className="text-base font-medium text-gray-900">
-                      $199
+                      $50
                     </dd>
                   </dl>
                 </div>
@@ -177,7 +177,7 @@ const Payment = () => {
                 <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2">
                   <dt className="text-base font-bold text-gray-900">Total</dt>
                   <dd className="text-base font-bold text-gray-900">
-                    ${total + 199 - 100}
+                    ${total + 50 - 10}
                   </dd>
                 </dl>
               </div>

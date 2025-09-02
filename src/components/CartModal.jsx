@@ -29,7 +29,7 @@ const CartModal = () => {
             {cart.map((item) => (
               <div className="flex gap-4" key={item.id}>
                 <Image
-                  src={item.image}
+                  src={item.thumbnail}
                   alt=""
                   width={72}
                   height={96}
