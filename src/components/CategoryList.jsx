@@ -1,77 +1,70 @@
-import Image from "next/image";
+// components/CategoryList.jsx
+
 import Link from "next/link";
+import Image from "next/image";
 
-const staticCategories = [
-  {
-    _id: "1",
-    // slug: "electronics",
-    name: "Electronics",
-    media: {
-      mainMedia: {
-        image: { url: "/pro1.jpg" },
-      },
-    },
-  },
-  {
-    _id: "2",
-    // slug: "fashion",
-    name: "Fashion",
-    media: {
-      mainMedia: {
-        image: { url: "/pro2.jpeg" },
-      },
-    },
-  },
-  {
-    _id: "3",
-    // slug: "home-decor",
-    name: "Home Decor",
-    media: {
-      mainMedia: {
-        image: { url: "/pro3.jpg" },
-      },
-    },
-  },
-  {
-    _id: "4",
-    // slug: "jkjkn",
-    name: "koj",
-    media: {
-      mainMedia: {
-        image: { url: "/pro4.webp" },
-      },
-    },
-  },
-];
+// Map category slugs to specific image paths in your public folder
+const categoryImages = {
+  smartphones: "/smartphones.jpg",
+  laptops: "/laptops.jpg",
+  fragrances: "/fragrances.jpg",
+  skincare: "/skincare.jpg",
+  groceries: "/groceries.jpg",
+  "home-decoration": "/home-decoration.jpg",
+  furniture: "/furniture.jpg",
+  tops: "/tops.jpg",
+  "womens-dresses": "/womens-dresses.jpg",
+  "womens-shoes": "/womens-shoes.jpg",
+  "mens-shirts": "/mens-shirts.jpg",
+  "mens-shoes": "/mens-shoes.jpg",
+  "mens-watches": "/mens-watches.jpg",
+  "womens-watches": "/womens-watches.jpg",
+  "womens-bags": "/womens-bags.jpg",
+  "womens-jewellery": "/womens-jewellery.jpg",
+  sunglasses: "/sunglasses.jpg",
+  automotive: "/automotive.jpg",
+  motorcycle: "/motorcycle.jpg",
+  lighting: "/lighting.jpg",
+  // Add a default image for any categories not in the list
+  default: "/pro1.jpg",
+};
 
-const CategoryList = () => {
+// Server Component: Fetches and renders the list of categories
+const CategoryList = async () => {
+  const res = await fetch("https://dummyjson.com/products/category-list");
+  const categories = await res.json();
+
   return (
     <div className="px-4 overflow-x-scroll scrollbar-hide">
       <div className="flex gap-4 md:gap-8">
-        {staticCategories.map((item) => (
-          <Link
-            href="/category"
-            className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
-            key={item._id}
-          >
-            <div className="relative bg-slate-100 w-full h-96">
-              <Image
-                src={item.media?.mainMedia?.image?.url || "/cat.png"}
-                alt="Slide image"
-                fill
-                sizes="(max-width: 768px) 100vw,
-         (max-width: 1200px) 50vw,
-         33vw"
-                className="object-cover"
-                priority // 🚀 improves Largest Contentful Paint
-              />
-            </div>
+        {categories.map((cat, index) => {
+          const slug = typeof cat === "string" ? cat : cat.slug;
+          const name = typeof cat === "string" ? cat : cat.name;
 
-            <h1 className="mt-8 font-light text-xl tracking-wide">
-              {item.name}
-            </h1>
-          </Link>
-        ))}
+          // Get the image URL from the map, falling back to a default
+          const imageUrl = categoryImages[slug] || categoryImages.default;
+
+          return (
+            <Link
+              href={`/category/${slug}`}
+              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+              key={index}
+            >
+              <div className="relative bg-slate-100 w-full h-96">
+                <Image
+                  src={imageUrl}
+                  alt={name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <h1 className="mt-8 font-light text-xl tracking-wide capitalize">
+                {name.replace("-", " ")}
+              </h1>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
