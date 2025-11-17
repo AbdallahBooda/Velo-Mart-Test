@@ -21,10 +21,10 @@ const Payment = () => {
   };
 
   return (
-    <section className="bg-white py-8 antialiased md:py-16">
+    <section className=" py-8 antialiased md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-xl font-bold text-blue-800 sm:text-2xl">
+          <h2 className="text-xl font-bold  sm:text-2xl">
             Payment
           </h2>
 
@@ -32,12 +32,12 @@ const Payment = () => {
             {/* ✅ React Hook Form */}
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="w-full rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 lg:max-w-xl lg:p-8"
+              className="w-full rounded-lg border border-gray-200  p-4 shadow-sm sm:p-6 lg:max-w-xl lg:p-8"
             >
               <div className="mb-6 grid grid-cols-2 gap-4">
                 {/* Full Name */}
                 <div className="col-span-2 sm:col-span-1">
-                  <label className="mb-2 block text-sm font-medium text-gray-900">
+                  <label className="mb-2 block text-sm font-medium ">
                     Full name (as displayed on card){" "}
                     <span className="text-red-500 text-lg font-bold">*</span>
                   </label>
@@ -46,7 +46,7 @@ const Payment = () => {
                     {...register("full_name", {
                       required: "Full name is required",
                     })}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm"
+                    className="block w-full rounded-lg border border-gray-300  p-2.5 text-sm"
                     placeholder="Bonnie Green"
                   />
                   {errors.full_name && (
@@ -58,7 +58,7 @@ const Payment = () => {
 
                 {/* Card Number */}
                 <div className="col-span-2 sm:col-span-1">
-                  <label className="mb-2 block text-sm font-medium text-gray-900">
+                  <label className="mb-2 block text-sm font-medium ">
                     Card number{" "}
                     <span className="text-red-500 text-lg font-bold">*</span>
                   </label>
@@ -71,7 +71,7 @@ const Payment = () => {
                         message: "Card number must be 16 digits",
                       },
                     })}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm"
+                    className="block w-full rounded-lg border border-gray-300  p-2.5 text-sm"
                     placeholder="1234123412341234"
                   />
                   {errors.card_number && (
@@ -83,7 +83,7 @@ const Payment = () => {
 
                 {/* Expiration */}
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-gray-900">
+                  <label className="mb-2 block text-sm font-medium ">
                     Card expiration{" "}
                     <span className="text-red-500 text-lg font-bold">*</span>
                   </label>
@@ -96,7 +96,7 @@ const Payment = () => {
                         message: "Format: MM/YY",
                       },
                     })}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm"
+                    className="block w-full rounded-lg border border-gray-300  p-2.5 text-sm"
                     placeholder="12/23"
                   />
                   {errors.card_expiration && (
@@ -108,7 +108,7 @@ const Payment = () => {
 
                 {/* CVV */}
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-gray-900">
+                  <label className="mb-2 block text-sm font-medium ">
                     CVV <span className="text-red-500 text-lg font-bold">*</span>
                   </label>
                   <input
@@ -120,7 +120,7 @@ const Payment = () => {
                         message: "CVV must be 3 digits",
                       },
                     })}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm"
+                    className="block w-full rounded-lg border border-gray-300  p-2.5 text-sm"
                     placeholder="123"
                   />
                   {errors.cvv && (
@@ -139,19 +139,19 @@ const Payment = () => {
 
             {/* Summary */}
             <div className="mt-6 grow sm:mt-8 lg:mt-0">
-              <div className="space-y-4 rounded-lg border border-gray-100 bg-gray-50 p-6">
+              <div className="space-y-4 rounded-lg border border-gray-100  p-6">
                 <div className="space-y-2">
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500">
+                    <dt className="text-base font-normal ">
                       Original price
                     </dt>
-                    <dd className="text-base font-medium text-gray-900">
+                    <dd className="text-base font-medium ">
                       ${total}
                     </dd>
                   </dl>
 
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500">
+                    <dt className="text-base font-normal ">
                       Savings
                     </dt>
                     <dd className="text-base font-medium text-green-500">
@@ -160,23 +160,23 @@ const Payment = () => {
                   </dl>
 
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500">
+                    <dt className="text-base font-normal ">
                       Store Pickup
                     </dt>
-                    <dd className="text-base font-medium text-gray-900">$99</dd>
+                    <dd className="text-base font-medium ">$99</dd>
                   </dl>
 
                   <dl className="flex items-center justify-between gap-4">
-                    <dt className="text-base font-normal text-gray-500">Tax</dt>
-                    <dd className="text-base font-medium text-gray-900">
+                    <dt className="text-base font-normal ">Tax</dt>
+                    <dd className="text-base font-medium ">
                       $50
                     </dd>
                   </dl>
                 </div>
 
                 <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2">
-                  <dt className="text-base font-bold text-gray-900">Total</dt>
-                  <dd className="text-base font-bold text-gray-900">
+                  <dt className="text-base font-bold ">Total</dt>
+                  <dd className="text-base font-bold ">
                     ${total + 50 - 10}
                   </dd>
                 </dl>

@@ -18,12 +18,10 @@ const ResetPassword = () => {
   return (
     <div className="h-[calc(100vh-80px)] px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold text-center text-blue-800">
-          Reset Password
-        </h1>
+        <h1 className="text-2xl font-bold text-center ">Reset Password</h1>
 
         <div className="flex flex-col gap-2">
-          <label className="text-sm text-gray-700">Email</label>
+          <label className="text-sm">Email</label>
           <input
             type="email"
             placeholder="Enter your email"

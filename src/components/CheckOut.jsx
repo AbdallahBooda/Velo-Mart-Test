@@ -24,34 +24,34 @@ const CheckOut = () => {
   };
 
   return (
-    <section className="bg-white py-8 antialiased md:py-16">
+    <section className=" py-8 antialiased md:py-16">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mx-auto max-w-screen-xl px-4 2xl:px-0"
       >
         {/* Steps */}
-        <ol className="items-center flex w-full max-w-2xl text-center text-sm font-semibold text-blue-800">
-          <li className="flex items-center text-blue-700 md:w-full">Cart</li>
-          <li className="flex items-center text-blue-700 md:w-full">Checkout</li>
+        <ol className="items-center flex w-full max-w-2xl text-center text-sm font-semibold ">
+          <li className="flex items-center  md:w-full">Cart</li>
+          <li className="flex items-center  md:w-full">Checkout</li>
           <li className="flex shrink-0 items-center">Order summary</li>
         </ol>
 
         <div className="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
           <div className="min-w-0 flex-1 space-y-8">
-            <h2 className="text-xl font-semibold text-blue-800">
+            <h2 className="text-xl font-semibold ">
               Delivery Details
             </h2>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {/* First Name */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   First Name
                 </label>
                 <input
                   type="text"
                   {...register("firstName", { required: "First name is required" })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="John"
                 />
                 {errors.firstName && (
@@ -61,13 +61,13 @@ const CheckOut = () => {
 
               {/* Last Name */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Last Name
                 </label>
                 <input
                   type="text"
                   {...register("lastName", { required: "Last name is required" })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="Doe"
                 />
                 {errors.lastName && (
@@ -77,7 +77,7 @@ const CheckOut = () => {
 
               {/* Email */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Your email
                 </label>
                 <input
@@ -89,7 +89,7 @@ const CheckOut = () => {
                       message: "Invalid email format",
                     },
                   })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="name@flowbite.com"
                 />
                 {errors.email && (
@@ -99,12 +99,12 @@ const CheckOut = () => {
 
               {/* Country */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Country
                 </label>
                 <select
                   {...register("country", { required: "Country is required" })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                 >
                   <option value="">Select country</option>
                   <option value="US">United States</option>
@@ -122,12 +122,12 @@ const CheckOut = () => {
 
               {/* City */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   City
                 </label>
                 <select
                   {...register("city", { required: "City is required" })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                 >
                   <option value="">Select city</option>
                   <option value="SF">San Francisco</option>
@@ -143,7 +143,7 @@ const CheckOut = () => {
 
               {/* Phone */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Phone Number
                 </label>
                 <input
@@ -155,7 +155,7 @@ const CheckOut = () => {
                       message: "Format: 123-456-7890",
                     },
                   })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="123-456-7890"
                 />
                 {errors.phone && (
@@ -165,13 +165,13 @@ const CheckOut = () => {
 
               {/* Address */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Address
                 </label>
                 <input
                   type="text"
                   {...register("address", { required: "Address is required" })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="123 Main St"
                 />
                 {errors.address && (
@@ -183,7 +183,7 @@ const CheckOut = () => {
 
               {/* Post number */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-blue-800">
+                <label className="mb-2 block text-sm font-semibold ">
                   Post number
                 </label>
                 <input
@@ -191,7 +191,7 @@ const CheckOut = () => {
                   {...register("post_number", {
                     required: "Post number is required",
                   })}
-                  className="block w-full rounded-lg border border-blue-500 bg-blue-50 p-2.5"
+                  className="block w-full rounded-lg border border-blue-500  p-2.5"
                   placeholder="DE42313253"
                 />
                 {errors.post_number && (
@@ -208,20 +208,20 @@ const CheckOut = () => {
             <div className="flow-root">
               <div className="-my-3 divide-y divide-gray-200">
                 <dl className="flex items-center justify-between py-3">
-                  <dt className="text-base font-semibold text-blue-800">
+                  <dt className="text-base font-semibold ">
                     Subtotal
                   </dt>
-                  <dd className="text-base font-medium text-gray-900">
+                  <dd className="text-base font-medium ">
                     ${total}
                   </dd>
                 </dl>
                 <dl className="flex items-center justify-between py-3">
-                  <dt className="text-base font-semibold text-blue-800">Tax</dt>
-                  <dd className="text-base font-medium text-gray-900">$50</dd>
+                  <dt className="text-base font-semibold ">Tax</dt>
+                  <dd className="text-base font-medium ">$50</dd>
                 </dl>
                 <dl className="flex items-center justify-between py-3">
-                  <dt className="text-base font-bold text-blue-800">Total</dt>
-                  <dd className="text-base font-bold text-gray-900">
+                  <dt className="text-base font-bold ">Total</dt>
+                  <dd className="text-base font-bold ">
                     ${total + 50}
                   </dd>
                 </dl>
