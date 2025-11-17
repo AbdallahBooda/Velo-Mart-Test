@@ -10,7 +10,7 @@ const ProductDetails = ({ product }) => {
     e.preventDefault(); // stop page reload
   };
   return (
-    <div className="bg-white">
+    <div className="">
       <div className="pt-24">
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
@@ -24,14 +24,14 @@ const ProductDetails = ({ product }) => {
 
         <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h1 className="text-2xl font-bold tracking-tight  sm:text-3xl">
               {product.title}
             </h1>
           </div>
 
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">
+            <p className="text-3xl tracking-tight ">
               ${product.price}
             </p>
 
@@ -88,7 +88,7 @@ const ProductDetails = ({ product }) => {
                 <p className="sr-only">4 out of 5 stars</p>
                 <Link
                   href="#"
-                  className="ml-3 text-sm font-medium text-blue-800 hover:text-blue-500"
+                  className="ml-3 text-sm font-medium  hover:text-blue-500"
                 >
                   117 reviews
                 </Link>
@@ -97,7 +97,7 @@ const ProductDetails = ({ product }) => {
 
             <form onSubmit={onSubmit} className="mt-10">
               <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+                <h3 className="text-sm font-medium ">Color</h3>
 
                 <fieldset aria-label="Choose a color" className="mt-4">
                   <div className="flex items-center space-x-3">
@@ -113,7 +113,7 @@ const ProductDetails = ({ product }) => {
                       />
                       <span
                         aria-hidden="true"
-                        className="h-8 w-8 rounded-full border border-black border-opacity-10 bg-white"
+                        className="h-8 w-8 rounded-full border border-black border-opacity-10 "
                       ></span>
                     </label>
                     <label
@@ -152,10 +152,10 @@ const ProductDetails = ({ product }) => {
 
               <div className="mt-10">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-gray-900">Size</h3>
+                  <h3 className="text-sm font-medium ">Size</h3>
                   <Link
-                    href="#"
-                    className="text-sm font-medium text-blue-800 hover:text-blue-500"
+                    href=""
+                    className="text-sm font-medium  hover:text-blue-500"
                   >
                     Size guide
                   </Link>
@@ -163,7 +163,7 @@ const ProductDetails = ({ product }) => {
 
                 <fieldset aria-label="Choose a size" className="mt-4">
                   <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                    <label className="group relative flex cursor-not-allowed items-center justify-center rounded-md border bg-gray-50 px-4 py-3 text-sm font-medium uppercase text-gray-200 hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-not-allowed items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase   focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -192,7 +192,7 @@ const ProductDetails = ({ product }) => {
                         </svg>
                       </span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border  px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -206,7 +206,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border  px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -220,7 +220,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border  px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -234,7 +234,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border  px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -248,7 +248,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -262,7 +262,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border  px-4 py-3 text-sm font-medium uppercase  shadow-sm  focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -276,7 +276,7 @@ const ProductDetails = ({ product }) => {
                         aria-hidden="true"
                       ></span>
                     </label>
-                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                    <label className="group relative flex cursor-pointer items-center justify-center rounded-md border px-4 py-3 text-sm font-medium uppercase  shadow-sm focus:outline-none sm:flex-1 sm:py-6">
                       <input
                         type="radio"
                         name="size-choice"
@@ -308,32 +308,32 @@ const ProductDetails = ({ product }) => {
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{product.description}</p>
+                <p className="text-base ">{product.description}</p>
               </div>
             </div>
 
             <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+              <h3 className="text-sm font-medium ">Highlights</h3>
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">
+                  <li className="">
+                    <span className="">
                       Hand cut and sewn locally
                     </span>
                   </li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">
+                  <li className="">
+                    <span className="">
                       Dyed with our proprietary colors
                     </span>
                   </li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">
+                  <li className="">
+                    <span className="">
                       Pre-washed &amp; pre-shrunk
                     </span>
                   </li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">
+                  <li className="">
+                    <span className="">
                       Ultra-soft 100% cotton
                     </span>
                   </li>
@@ -342,10 +342,10 @@ const ProductDetails = ({ product }) => {
             </div>
 
             <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
+              <h2 className="text-sm font-medium ">Details</h2>
 
               <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm ">
                   The 6-Pack includes two black, two white, and two heather gray
                   Basic Tees. Sign up for our subscription service and be the
                   first to get new, exciting colors, like our upcoming

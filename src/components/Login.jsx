@@ -21,13 +21,13 @@ const Login = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 w-full max-w-sm"
       >
-        <h1 className="text-2xl font-bold text-center text-blue-800">Login</h1>
+        <h1 className="text-2xl font-bold text-center ">Login</h1>
 
         {/* Email Field */}
         <div className="flex flex-col">
           <label
             htmlFor="email"
-            className="mb-1 text-sm font-medium text-gray-700"
+            className="mb-1 text-sm font-medium "
           >
             Email
           </label>
@@ -53,7 +53,7 @@ const Login = () => {
         <div className="flex flex-col">
           <label
             htmlFor="password"
-            className="mb-1 text-sm font-medium text-gray-700"
+            className="mb-1 text-sm font-medium "
           >
             Password
           </label>

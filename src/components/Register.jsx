@@ -21,11 +21,11 @@ const Register = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 w-full max-w-sm"
       >
-        <h1 className="text-2xl font-bold text-center text-blue-800">Register</h1>
+        <h1 className="text-2xl font-bold text-center ">Register</h1>
 
         {/* Username */}
         <div className="flex flex-col">
-          <label htmlFor="username" className="mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="username" className="mb-1 text-sm font-medium ">
             Username
           </label>
           <input
@@ -40,7 +40,7 @@ const Register = () => {
 
         {/* City */}
         <div className="flex flex-col">
-          <label htmlFor="city" className="mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="city" className="mb-1 text-sm font-medium ">
             City
           </label>
           <input
@@ -55,7 +55,7 @@ const Register = () => {
 
         {/* Phone */}
         <div className="flex flex-col">
-          <label htmlFor="phone" className="mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="phone" className="mb-1 text-sm font-medium ">
             Phone
           </label>
           <input
@@ -73,7 +73,7 @@ const Register = () => {
 
         {/* Email */}
         <div className="flex flex-col">
-          <label htmlFor="email" className="mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="email" className="mb-1 text-sm font-medium ">
             Email
           </label>
           <input
@@ -94,7 +94,7 @@ const Register = () => {
 
         {/* Password */}
         <div className="flex flex-col">
-          <label htmlFor="password" className="mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="password" className="mb-1 text-sm font-medium ">
             Password
           </label>
           <input
